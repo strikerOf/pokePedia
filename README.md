@@ -37,6 +37,10 @@ para ello ejecutar:
 ```bash
   http-server -p 8080 -c-l dist/poke-pedia
 ```
+en caso de no tener http-server en tu equipo, puedes instalarlo de la siguiente forma:
+```bash
+npm install -g http-server
+```
 con esto la aplicacion ya deberia estar ejecutandose, para poder verla ACCEDE A :
 ```bash
 http://127.0.0.1:8080/
