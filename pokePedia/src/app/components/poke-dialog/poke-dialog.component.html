@@ -1,0 +1,39 @@
+<h1 mat-dialog-title class="title-app">Pokémon details</h1>
+<h2 mat-dialog-title>{{data.name}}</h2>
+<mat-dialog-content>
+    <div>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col xl-6">
+                <mat-list>
+                    <mat-list-item>
+                        <span matListItemTitle>Height</span>
+                        <span>{{data.height}}</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>Weight</span>
+                        <span  matListItemLine>{{data.weight}}</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>Type(s)</span>
+                        <span *ngFor="let type of data.types" matListItemLine>{{type.type.name}}</span>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col xl-6">
+                <mat-list>
+                    <mat-list-item>
+                        <span matListItemTitle>Base experience</span>
+                        <span>{{data.base_experience}}</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>Habilities</span>
+                        <span *ngFor="let ability of data.abilities" matListItemLine>{{ability.ability.name}}</span>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

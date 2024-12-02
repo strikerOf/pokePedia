@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import "@angular/material/prebuilt-themes/indigo-pink.css"; */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    background: linear-gradient(180deg, rgba(255, 1, 1, 1) 2%, rgba(255, 0, 129, 1) 49%, rgba(255, 8, 8, 1) 100%);
+}
+.principal-card{
+    height: 50vh;
+}
+.btn-peke{
+    font-size: 10px !important;
+    padding: 1%;;
+}
+.btn-medium{
+
+}
+.btn-black{
+    background-color: black !important;
+    color: white !important;
+}
+.title-app {
+    background: black;
+    color: yellow !important
+}

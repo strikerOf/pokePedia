@@ -1,0 +1,72 @@
+<main class="main d-flex">
+    <div class="container">
+        <div class="py-5">
+            <div class="row">
+                    <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 col-2">
+                        <button mat-mini-fab (click)="goPage()" class="btn-peke btn-black" extended>
+                            <mat-icon>arrow_back</mat-icon>
+                        </button>
+                    </div>
+                    <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 col-10">
+                        <app-search-pokemons (searchEvent)="filterResults($event)"></app-search-pokemons>
+                    </div>
+            </div>
+                    
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                    <mat-card appearance="outlined" class="poke-list-card">
+                        <div class="mat-elevation-z8">
+                            <table mat-table [dataSource]="dataSource">
+
+                                <ng-container matColumnDef="sprites">
+                                    <th mat-header-cell *matHeaderCellDef> PokePhoto </th>
+                                    <td mat-cell *matCellDef="let element">
+                                        <figure>
+                                        <img (click)="openDialog(element)" class="poke-foto" [src]="element.sprites.front_default"/>
+                                            <figcaption class="mini-text">Touch image</figcaption>
+                                        </figure>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="name">
+                                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                                </ng-container>
+                        
+                                <ng-container matColumnDef="base_experience">
+                                    <th mat-header-cell *matHeaderCellDef>Type(s)</th>
+                                    <td mat-cell *matCellDef="let element">
+                                        <mat-list class="list-withOut-padding">
+                                            <mat-list-item >
+                                                <span *ngFor="let type of element.types" matListItemLine >{{type.type.name}}</span>
+                                            </mat-list-item>
+                                        </mat-list>
+                                    </td>
+                                </ng-container>
+                        
+                            
+                                <ng-container matColumnDef="actions">
+                                    <th mat-header-cell *matHeaderCellDef class="actions-column"> Actions </th>
+                                    <td mat-cell *matCellDef="let element" class="actions-column"> 
+                                        <button mat-mini-fab (click)="openDialog(element)" class="btn-peke btn-black" extended>
+                                            <mat-icon>open_in_full</mat-icon>
+                                        </button>
+                                        <!-- <button mat-mini-fab (click)="openDialog(element)" class="btn-peke" extended>
+                                            <mat-icon>favorite</mat-icon>
+                                        </button> -->
+                                    </td>
+                                </ng-container>
+                            
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            </table>
+                        
+                            <mat-paginator class="custom-pagination" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+                            </mat-paginator>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
