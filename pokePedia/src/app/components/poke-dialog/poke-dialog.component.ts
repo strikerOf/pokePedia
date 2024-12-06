@@ -17,4 +17,8 @@ import {MatListModule} from '@angular/material/list';
 export class PokeDialogComponent {
    readonly dialog = Inject(MatDialog);
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+
+  checkUnities(size:number): string{
+    return (size/10).toString()+'Mts.'
+  }
 }

@@ -30,7 +30,11 @@
 
                                 <ng-container matColumnDef="name">
                                     <th mat-header-cell *matHeaderCellDef> Name </th>
-                                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                                    <td mat-cell *matCellDef="let element">
+                                        <mat-icon aria-hidden="false" *ngIf="isFav(element.name)==true" aria-label="Fav" (click)="removeFav(element.name)" class="color-fav" fontIcon="star"></mat-icon>
+                                        <mat-icon aria-hidden="false" *ngIf="isFav(element.name)==false" aria-label="No Fav" (click)="addFav(element.name)" fontIcon="star"></mat-icon>
+                                        {{element.name}}
+                                     </td>
                                 </ng-container>
                         
                                 <ng-container matColumnDef="base_experience">

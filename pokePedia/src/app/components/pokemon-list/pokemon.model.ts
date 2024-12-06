@@ -3,7 +3,7 @@ export interface Pokemon {
     url: string;
     sprites: Sprites;
     base_experience: number;
-    types: Types
+    types: Type[];
     imageUrl:string
 }
 export interface Sprites {

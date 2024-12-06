@@ -7,7 +7,7 @@ import {map, catchError } from 'rxjs/operators'
   providedIn: 'root'
 })
 export class PokeServiceService {
-  private urlApi = 'https://pokeapi.co/api/v2/pokemon?limit=20';
+  private urlApi = 'https://pokeapi.co/api/v2/pokemon';
   constructor(private http: HttpClient) {}
   // peticion :) 
   getPokes(): Observable<any[]>{

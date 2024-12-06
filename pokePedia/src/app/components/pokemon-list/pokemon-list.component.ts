@@ -75,12 +75,22 @@ export class PokemonListComponent implements OnInit, AfterViewInit {
       );
         // console.log(data);
         forkJoin(detailPokemon).subscribe(
-          detailPokemonList=>{
-            console.log(detailPokemonList)
-            this.dataSource.data=detailPokemonList;
-            this.pokemonsList=detailPokemonList;
-            this.showSnackBar("information uploaded successfully"); 
-          }
+          (detailPokemonList: Pokemon[]) => {
+             this.dataSource.data = detailPokemonList.filter(pokemon => pokemon !== null) as Pokemon[]; 
+             this.dataSource.paginator = this.paginator; 
+             // 
+             this.dataSource.filterPredicate = (data: Pokemon, filter: string) => {
+             const transformedFilter = filter.trim().toLowerCase(); 
+             const nameMatches = data.name.toLowerCase().includes(transformedFilter);
+             const typeMatches = data.types.some(type => type.type.name.toLowerCase().includes(transformedFilter)); 
+             return nameMatches || typeMatches; };
+          // detailPokemonList=>{
+          //   console.log(detailPokemonList)
+          //   this.dataSource.data=detailPokemonList;
+          //   this.pokemonsList=detailPokemonList;
+          //   this.showSnackBar("information uploaded successfully"); 
+          //
+           }
           
         )
       }
@@ -116,5 +126,23 @@ export class PokemonListComponent implements OnInit, AfterViewInit {
     this.snackBar.open(message, 'Cerrar', { duration: 3000, 
     horizontalPosition: this.horizontalPosition, 
     verticalPosition: this.verticalPosition 
-  }); }
+    }); 
+  }
+  addFav(name:string):void{
+    localStorage.setItem(name,'fav');
+    this.showSnackBar("Agregado a favoritos"); 
+  }
+  removeFav(name:string){
+    localStorage.removeItem(name);
+    this.showSnackBar("Eliminado de favoritos"); 
+  }
+  isFav(name:string):boolean{
+    const item = localStorage.getItem(name); 
+    //existe?
+    if (item !== null) { 
+      return true;
+    } else { 
+      return false; 
+    }
+  }
 }
