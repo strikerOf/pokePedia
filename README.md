@@ -1,63 +1,27 @@
-
 # PokePedia
 
-Es una pequeña app en angular , tambien pwa y se utiliza la PokeApi
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
 
-## Installation
+## Development server
 
-Clonar el repositorio de la siguiente forma usando git clone:
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-```bash
-  git clone https://github.com/strikerOf/pokePedia.git
-```
-accede a la carpeta poke-pediae instala las dependencias
-```bash
-  cd pokePedia
-  npm install
-```
-Al terminar de instalr todas las dependencias en la carpeta raiz en que te ubicas corre el proyecto de la siguiente forma:
+## Code scaffolding
 
-```bash
-  ng serve
-```
-se comenzara a contruir la aplicacion y en la consola veras la url y el puerto al que debes acceder:
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-```bash
-  http://localhost:4200/
-```
+## Build
 
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-### Probar PWA apllication
-Con los siguientes comandos en la carpeta raiz:
-```bash
-  npm run prod
-```
-Esto construira la aplicacion para poderla probar.
-para ello ejecutar:
-```bash
-  http-server -p 8080 -c-l dist/poke-pedia
-```
-en caso de no tener http-server en tu equipo, puedes instalarlo de la siguiente forma:
-```bash
-npm install -g http-server
-```
-con esto la aplicacion ya deberia estar ejecutandose, para poder verla ACCEDE A :
-```bash
-http://127.0.0.1:8080/
-```
-En esa ruta encontraras las opciones del server, en el cual para poder verlo selecciona "browser", esto te mandara a la vista de la aplicacion.
+## Running unit tests
 
-### Probar en Modo Offline
-Abre las herramientas de desarrollo del navegador (F12).
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-* Ve a la pestaña Application/Aplicación y selecciona Service Workers.
+## Running end-to-end tests
 
-* Marca la opción Offline/Sin conexion para simular que no hay conexión a internet.
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-* Navega por la aplicación para verificar el uso de la misma.
-## Authors
+## Further help
 
-- Luis Sánchez Juárez
-
-## Extra
-Para la creacion de esta app me enfoque en un diseño limpio y no saturado para mostrar todos los elementos, me inspire en las aplicaciones moviles para que fuese sencillo lo que corresponde al responsive y demas.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
