@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:pokePedia": "node dist/poke-pedia/server/server.mjs",
-    "postinstall": "npm install --omit=dev && npm run build"
+    "postinstall": "npm run build"
   },
   "private": true,
   "dependencies": {
